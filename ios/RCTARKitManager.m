@@ -333,18 +333,19 @@ RCT_EXPORT_METHOD(snapshot:(NSDictionary *)options resolve:(RCTPromiseResolveBlo
 
 RCT_EXPORT_METHOD(snapshotCamera:(NSDictionary *)options resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSDictionary * selection = options[@"selection"];
-        NSDictionary * cameraProperties = [[ARKit sharedInstance] readCamera];
-        UIImage *image = [[ARKit sharedInstance] getSnapshotCamera:selection];
-        [self storeImage:image options:options reject:reject resolve:resolve cameraProperties:cameraProperties];
+        UIImage *image = [[ARKit sharedInstance] getSnapshotCamera:options];
+        if (!image) return reject(@"snapshot_error", @"couldn't get camera snapshot.", nil);
+        CGFloat quality = 0.8;
+        if (options[@"quality"]) quality = [options[@"quality"] floatValue];
+        NSData *photoData = UIImageJPEGRepresentation(image, quality);
+        resolve(@{@"base64":[photoData base64EncodedStringWithOptions:0]});
     });
 }
 
 RCT_EXPORT_METHOD(pickColorsRaw:(NSDictionary *)options resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        NSDictionary * selection = options[@"selection"];
-        UIImage *image = [[ARKit sharedInstance] getSnapshotCamera:selection];
+        UIImage *image = [[ARKit sharedInstance] getSnapshotCamera:options];
         resolve([[ColorGrabber sharedInstance] getColorsFromImage:image options:options]);
     });
 }

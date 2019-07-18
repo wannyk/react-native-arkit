@@ -8,6 +8,7 @@
 
 #import "RCTARKit.h"
 #import "RCTConvert+ARKit.h"
+#import "UIImage-Extension.h"
 
 @import CoreLocation;
 
@@ -334,7 +335,7 @@ static NSDictionary * vector4ToJson(const SCNVector4 v) {
 
 
 
-- (UIImage *)getSnapshotCamera:(NSDictionary *)selection {
+- (UIImage *)getSnapshotCamera:(NSDictionary *)options {
     CVPixelBufferRef pixelBuffer = self.arView.session.currentFrame.capturedImage;
     CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
     
@@ -345,12 +346,16 @@ static NSDictionary * vector4ToJson(const SCNVector4 v) {
                                                  CVPixelBufferGetWidth(pixelBuffer),
                                                  CVPixelBufferGetHeight(pixelBuffer))];
     
-    UIImage *image = [UIImage imageWithCGImage:videoImage scale: 1.0 orientation:UIImageOrientationRight];
+    UIImage *image = [UIImage imageWithCGImage:videoImage];
     CGImageRelease(videoImage);
-    
-    UIImage *cropped = [self cropImage:image toSelection:selection];
-    return cropped;
-    
+
+    if (options[@"selection"]) {
+        return [self cropImage:image toSelection:options[@"selection"]];
+    }
+    else if (options[@"resize"]) {
+        return [image imageByScalingToSize:CGSizeMake([options[@"resize"][@"width"] floatValue], [options[@"resize"][@"height"] floatValue])];
+    }
+    return image;
 }
 
 
