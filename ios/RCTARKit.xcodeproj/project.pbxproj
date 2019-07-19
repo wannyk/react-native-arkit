@@ -15,6 +15,7 @@
 		10ED47A71F38BC01004DF043 /* DeviceMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED47A61F38BC00004DF043 /* DeviceMotion.m */; };
 		10FEF6141F774C9000EC21AE /* RCTARKitIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FEF6101F774C8F00EC21AE /* RCTARKitIO.m */; };
 		10FEF6151F774C9000EC21AE /* RCTARKitNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FEF6121F774C9000EC21AE /* RCTARKitNodes.m */; };
+		313E566622E1688E00A5B9B8 /* UIImage-Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 313E566422E1688D00A5B9B8 /* UIImage-Extension.m */; };
 		B1990B221FCEEBD60001AE2F /* color-grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = B1990B211FCEEBD60001AE2F /* color-grabber.m */; };
 		B1CEA29F204C14090025C1B8 /* RCTARKitSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CEA29E204C14090025C1B8 /* RCTARKitSpriteView.m */; };
 		B1CEA2A3204C160D0025C1B8 /* RCTARKitSpriteViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CEA2A2204C160D0025C1B8 /* RCTARKitSpriteViewManager.m */; };
@@ -61,6 +62,8 @@
 		10FEF6121F774C9000EC21AE /* RCTARKitNodes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTARKitNodes.m; sourceTree = "<group>"; };
 		10FEF6131F774C9000EC21AE /* RCTARKitDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTARKitDelegate.h; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRCTARKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTARKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		313E566422E1688D00A5B9B8 /* UIImage-Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extension.m"; sourceTree = "<group>"; };
+		313E566522E1688E00A5B9B8 /* UIImage-Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extension.h"; sourceTree = "<group>"; };
 		B14C36631F960C500047CB67 /* PocketSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PocketSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14C36651F960C6E0047CB67 /* PocketSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PocketSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1990B201FCEEBD60001AE2F /* color-grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "color-grabber.h"; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				10062C821F127572009AE974 /* RCTARKitManager.m */,
 				105F124C1F7C0718006D4BA3 /* RCTConvert+ARKit.h */,
 				105F124D1F7C0718006D4BA3 /* RCTConvert+ARKit.m */,
+				313E566522E1688E00A5B9B8 /* UIImage-Extension.h */,
+				313E566422E1688D00A5B9B8 /* UIImage-Extension.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				B13FF7601F94F72400A6C92B /* Frameworks */,
 			);
@@ -210,6 +215,7 @@
 				10FEF6141F774C9000EC21AE /* RCTARKitIO.m in Sources */,
 				10DCBC4B1F7CE836008C89E7 /* ARGeosManager.m in Sources */,
 				10FEF6151F774C9000EC21AE /* RCTARKitNodes.m in Sources */,
+				313E566622E1688E00A5B9B8 /* UIImage-Extension.m in Sources */,
 				B1990B221FCEEBD60001AE2F /* color-grabber.m in Sources */,
 				1021FE1C1F3EDB98000E7339 /* ARModelManager.m in Sources */,
 				1021FE1D1F3EDB9B000E7339 /* ARTextManager.m in Sources */,
