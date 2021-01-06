@@ -7,7 +7,7 @@
 //
 
 #import "RCTConvert+ARKit.h"
-#import "SVGBezierPath.h"
+#import "PocketSVG/SVGBezierPath.h"
 
 @implementation RCTConvert (ARKit)
 
